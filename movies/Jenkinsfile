@@ -86,8 +86,7 @@ pipeline {
                 sh '''
                    oc project ${DEV_PROJECT}
                    oc new-app --name ${APP_NAME} ${APP_NAME}:latest
-                // TODO: Expose the ${APP_NAME} service for external access
-                   oc expose svc/${APP_NAME}
+                   oc expose svc/${APP_NAME} 
                 '''
             }
         }
